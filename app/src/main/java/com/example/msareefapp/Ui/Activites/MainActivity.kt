@@ -1,4 +1,4 @@
-package com.example.msareefapp
+package com.example.msareefapp.Ui.Activites
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -9,6 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import com.example.msareefapp.R
 import com.example.msareefapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

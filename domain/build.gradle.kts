@@ -1,23 +1,20 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
 
 }
 
 android {
-    namespace = "com.example.msareefapp"
+    namespace = "com.example.domain"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.msareefapp"
         minSdk = 21
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -36,27 +33,16 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        dataBinding = true
-        viewBinding = true
-    }
 }
 
 dependencies {
-
-    //viewModel&LiveData
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-//Dagger-Hilt
-    implementation(libs.hilt.android.v2511)
+    //Dagger-Hilt
+    implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
