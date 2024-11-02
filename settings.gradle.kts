@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "MsareefApp"
 include(":app")
- 
+include(":domain")
+include(":data")
