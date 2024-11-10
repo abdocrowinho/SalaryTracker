@@ -13,15 +13,21 @@
         android:theme="@style/Theme.MsareefApp"
         tools:targetApi="31">
         <activity
-            android:name=".Ui.Activites.MainActivity"
+            android:name=".Ui.Activites.regestertion.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.Activites.splash.StartActivity"
             android:exported="true"
-            android:theme="@style/Theme.MsareefApp">
+            android:windowTranslucentStatus="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Ui.Activites.onBorading.OnBoardingActivity"
+            android:exported="false"></activity>
     </application>
 
 </manifest>
