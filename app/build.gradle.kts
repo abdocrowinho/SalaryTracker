@@ -7,6 +7,9 @@ plugins {
 }
 
 android {
+    viewBinding {
+      enable = true
+    }
     namespace = "com.example.msareefapp"
     compileSdk = 34
 
@@ -49,8 +52,10 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 //Dagger-Hilt
     implementation(libs.hilt.android.v2511)
+    implementation(libs.androidx.activity)
     kapt(libs.hilt.android.compiler)
-
+// lottie
+    implementation (libs.lottie)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

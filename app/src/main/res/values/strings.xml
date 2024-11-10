@@ -43,4 +43,11 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="salary_tracker">Salary Tracker</string>
+    <string name="skip">Skip</string>
+    <string name="nick_name">اسمك المستعار</string>
+    <string name="enter_your_salary">اكتب المرتب بتاعك</string>
+    <string name="svaing_goals">عاوز تحوش قد اية من المرتب ؟</string>
+    <string name="send">ابعت</string>
+    <string name="intro_of_register">طيب يا معلم، احنا هنا هنظبطلك شوية حاجات بسيطة عشان نتابع مرتبك وادخارك بشكل لذيذ عاوزينك بس تملى شوية البيانات دي : -</string>
 </resources>
