@@ -61,6 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="?attr/colorPrimary"
+                android:inputType="number"
 
                 />
 
@@ -71,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
-            android:hint="عاوزنا نبعتلك اشعار كل قد اية ؟ "
+            android:hint="عاوزنا نبعتلك اشعار كل قد اية ؟/ساعة "
             app:hintTextColor="?attr/colorPrimary"
             android:layout_weight="1"
 
@@ -102,6 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="?attr/colorPrimary"
+                android:inputType="number"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>

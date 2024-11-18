@@ -9,7 +9,9 @@ import com.example.msareefapp.Bases.BaseActivity
 import com.example.msareefapp.Bases.BaseViewModel
 import com.example.msareefapp.Ui.Activites.onBorading.OnBoardingActivity
 import com.example.msareefapp.databinding.ActivityStartBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class StartActivity : BaseActivity<ActivityStartBinding,BaseViewModel>() {
   private  val _viewModel :BaseViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {

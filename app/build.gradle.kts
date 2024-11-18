@@ -51,11 +51,15 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 //Dagger-Hilt
+
     implementation(libs.hilt.android.v2511)
     implementation(libs.androidx.activity)
     kapt(libs.hilt.android.compiler)
 // lottie
     implementation (libs.lottie)
+    implementation(project(":domain"))
+    implementation(project(":data"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

@@ -50,4 +50,8 @@
     <string name="svaing_goals">عاوز تحوش قد اية من المرتب ؟</string>
     <string name="send">ابعت</string>
     <string name="intro_of_register">طيب يا معلم، احنا هنا هنظبطلك شوية حاجات بسيطة عشان نتابع مرتبك وادخارك بشكل لذيذ عاوزينك بس تملى شوية البيانات دي : -</string>
+    <string name="register_done">"تم تسجيل الدخول "</string>
+    <string name="ok">ماشي</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
