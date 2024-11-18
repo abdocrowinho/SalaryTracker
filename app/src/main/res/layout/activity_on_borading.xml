@@ -20,6 +20,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/tapLayoutGudie"
             android:orientation="horizontal"
+            tools:src="@tools:sample/avatars"
+            tools:listitem="2"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
 

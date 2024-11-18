@@ -38,9 +38,15 @@ android {
 
 dependencies {
     //Room
+    implementation (libs.androidx.room.ktx)
     implementation(libs.androidx.room.runtime)
+    implementation(libs.firebase.firestore.ktx)
     annotationProcessor(libs.androidx.room.compiler)
+
+    implementation(project(":domain"))
+
     kapt(libs.androidx.room.compiler)
+    implementation (libs.gson)
     //Dagger-Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)

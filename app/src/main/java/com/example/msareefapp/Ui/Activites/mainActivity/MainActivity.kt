@@ -6,7 +6,9 @@ import androidx.activity.viewModels
 import com.example.msareefapp.Bases.BaseActivity
 import com.example.msareefapp.R
 import com.example.msareefapp.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding,MainActivityViewModel>(){
    private val _viewModel : MainActivityViewModel by viewModels()
     override fun initViewModel(): MainActivityViewModel {

@@ -9,7 +9,9 @@ import com.example.msareefapp.Bases.BaseActivity
 import com.example.msareefapp.Ui.Activites.regestertion.RegisterActivity
 import com.example.msareefapp.Utiltes.Constants
 import com.example.msareefapp.databinding.ActivityOnBoradingBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OnBoardingActivity : BaseActivity<ActivityOnBoradingBinding, OnBoardingViewModel>() {
     private val _viewModel: OnBoardingViewModel by viewModels()
     private var adapter: BoardingAdapter? = null
