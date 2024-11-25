@@ -54,4 +54,10 @@
     <string name="ok">ماشي</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Statics">إحصائيات</string>
+    <string name="invoices">الفواتير</string>
+    <string name="profile">حسابي</string>
+    <string name="balance">الميزانية</string>
+    <string name="Expenses">الأنفاق</string>
+    <string name="saving">الادخار</string>
 </resources>

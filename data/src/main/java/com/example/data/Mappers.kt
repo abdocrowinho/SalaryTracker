@@ -30,7 +30,9 @@ fun Invoice.toInvoiceEntity(): InvoiceEntity {
         id = id!!,
         purchasedItems = purchasedItems?.map { it?.toPurchasedItem() },
         time = time,
-        dateTime = dateTime
+        dateTime = dateTime,
+        invoiceType = invoiceType
+
     )
 }
 /*---------------------------domain to data-----------------------------*/
@@ -59,7 +61,8 @@ fun InvoiceEntity.toInvoice(): Invoice {
         id = id,
         purchasedItems = purchasedItems?.map { it?.toPurchasedItem() },
         time = time,
-        dateTime = dateTime
+        dateTime = dateTime,
+        invoiceType = invoiceType
     )
 }
 
