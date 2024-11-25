@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/staticsFragment"
+        android:icon="@drawable/statics"
+        android:title="@string/Statics"
+        />
+    <item android:id="@+id/invoicesFragment"
+        android:icon="@drawable/invoice"
+        android:title="@string/invoices"
+        />
+    <item android:id="@+id/profileFragment"
+        android:icon="@drawable/accountant"
+        android:title="@string/profile"
+        />
+</menu>

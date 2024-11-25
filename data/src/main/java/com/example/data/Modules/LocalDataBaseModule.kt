@@ -22,8 +22,9 @@ class LocalDataBaseModule {
     fun provideDatabase(@ApplicationContext context: Context):LocalDataBase{
         return Room.databaseBuilder(context = context.applicationContext,
             LocalDataBase::class.java,
-            Constants.APP_DATA_BASE_NAME
-            ).build()
+    Constants.APP_DATA_BASE_NAME
+            ).fallbackToDestructiveMigration()
+            .build()
     }
     @Singleton
     @Provides

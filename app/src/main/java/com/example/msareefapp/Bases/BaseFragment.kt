@@ -28,7 +28,7 @@ abstract class BaseFragment<vb : ViewBinding,
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = DataBindingUtil.inflate(inflater, initViews(), container, false)
+        _binding = inflateBinding(inflater,container)
         return binding?.root
 
     }
@@ -37,7 +37,6 @@ abstract class BaseFragment<vb : ViewBinding,
         super.onDestroy()
         _binding = null
     }
-
-    abstract fun initViews(): Int
+    abstract fun inflateBinding(inflater: LayoutInflater, container: ViewGroup?): vb
 
 }
