@@ -3,6 +3,7 @@ package com.example.data.Modules
 import android.content.Context
 import androidx.room.Room
 import com.example.data.Constants
+import com.example.data.dataSources.localDataBase.Dao.CategoryDao
 import com.example.data.dataSources.localDataBase.Dao.InvoiceDao
 import com.example.data.dataSources.localDataBase.Dao.UserDao
 import com.example.data.dataSources.localDataBase.LocalDataBase
@@ -35,6 +36,11 @@ class LocalDataBaseModule {
     @Provides
     fun provideInvoiceDao(localDataBase: LocalDataBase):InvoiceDao{
         return localDataBase.invoiceDao()
+    }
+    @Singleton
+    @Provides
+    fun provideCategoryDao(localDataBase: LocalDataBase):CategoryDao{
+        return localDataBase.categoryDao()
     }
 
 }

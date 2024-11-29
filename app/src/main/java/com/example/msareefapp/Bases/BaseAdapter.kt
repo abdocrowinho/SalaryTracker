@@ -6,24 +6,26 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
 abstract class BaseAdapter<T, VB : ViewBinding>(
-    private var items: MutableList<T>
+    private var items: MutableList<T?>?
 ) : RecyclerView.Adapter<BaseAdapter.BaseViewHolder<T, VB>>() {
 
     abstract class BaseViewHolder<T, VB : ViewBinding>(private val binding: VB) :
         RecyclerView.ViewHolder(binding.root) {
+
         abstract fun bind(item: T)
-        fun getBinding():VB{
-return binding
+
+        fun getBinding(): VB {
+            return binding
         }
 
     }
 
-    override fun getItemCount(): Int {
-        return items.size
+   override fun getItemCount(): Int {
+        return items?.size ?:0
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<T, VB>, position: Int) {
-        holder.bind(items[position])
+        items?.get(position)?.let { holder.bind(it) }
 
     }
 
@@ -36,7 +38,7 @@ return binding
     abstract fun getViewHolder(binding: VB): BaseViewHolder<T, VB>
 
 
-    fun updateItems(list: MutableList<T>) {
+    fun updateItems(list: MutableList<T?>?) {
         items = list
         notifyDataSetChanged()
     }

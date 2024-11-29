@@ -11,7 +11,7 @@ import com.example.data.dataSources.localDataBase.Entity.UserEntity
 @Dao
 interface UserDao {
     @Query("Select * From ${Constants.USER_ENTITY} Limit 1 ")
-    suspend fun getUser():UserEntity
+    suspend fun getUser():UserEntity?
 
     @Insert
     suspend fun insertUser(userEntity: UserEntity)

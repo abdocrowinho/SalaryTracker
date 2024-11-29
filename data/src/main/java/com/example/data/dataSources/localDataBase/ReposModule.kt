@@ -1,7 +1,9 @@
 package com.example.data.dataSources.localDataBase
 
+import com.example.data.dataSources.localDataBase.repositoryImpl.CategoryReposImpl
 import com.example.data.dataSources.localDataBase.repositoryImpl.InvoiceRepoImpl
 import com.example.data.dataSources.localDataBase.repositoryImpl.UserReposImpl
+import com.example.domain.repos.CategoryRepos
 import com.example.domain.repos.InvoiceRepos
 import com.example.domain.repos.UserRepos
 import dagger.Module
@@ -15,14 +17,20 @@ import javax.inject.Singleton
  object ReposModule{
     @Provides
     @Singleton
-    fun userReposBinding(
+    fun providesUserRepos(
       userReposImpl: UserReposImpl
   ):UserRepos =userReposImpl
 
 
         @Provides
         @Singleton
-        fun invoiceReposBinding(
+        fun providesInvoiceRepos(
             invoiceRepoImpl: InvoiceRepoImpl
         ): InvoiceRepos =invoiceRepoImpl
+
+    @Provides
+    @Singleton
+    fun providesCategoriesRepos(
+        categoryReposImpl: CategoryReposImpl
+    ):CategoryRepos =categoryReposImpl
     }

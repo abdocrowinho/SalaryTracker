@@ -12,8 +12,8 @@ class UserReposImpl @Inject constructor(
     private val userDao: UserDao
 
 ) : UserRepos  {
-    override suspend fun getUser(): User {
-     return   userDao.getUser().toUser()
+    override suspend fun getUser(): User? {
+     return   userDao.getUser()?.toUser()
     }
 
     override suspend fun insertUser(userEntity: User) {

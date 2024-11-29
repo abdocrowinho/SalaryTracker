@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ui.Fragments.Statics.StaticsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/main_appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/app_bar_wave">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:id="@+id/upTextsAppBar_LL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="16dp"
+                    android:weightSum="4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/appBarTittle_Tv"
+                        style="@style/CustomTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_weight="0"
+                        android:text="@string/salary_tracker"
+                        android:textColor="?attr/colorSecondary" />
+
+                    <TextView
+                        android:id="@+id/userName_TV"
+                        style="@style/CustomTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="end"
+                        android:textColor="@color/white"
+                        tools:text="ali maloull" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/staticBar_LL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="32dp"
+                    android:weightSum="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/upTextsAppBar_LL">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:orientation="vertical">
+
+                        <com.example.msareefapp.Ui.customeViews.CustomCircleViewWithPercent
+                            android:id="@+id/balance_percent"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            app:aboveCircleColor="@color/black_light"
+                            app:backgroundCircleColor="@color/white"
+                            app:circleTextColor="@color/white"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/appBarTittle_Tv"
+                            tools:circleText="100%" />
+
+                        <TextView
+                            style="@style/CustomTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/dyna_puff_regular"
+                            android:text="@string/balance"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.example.msareefapp.Ui.customeViews.CustomCircleViewWithPercent
+                            android:id="@+id/expenses_percent"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            app:aboveCircleColor="@color/white"
+                            app:backgroundCircleColor="@color/black_light"
+                            app:circleTextColor="@color/white"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/appBarTittle_Tv"
+
+                            tools:circleText="100%" />
+
+                        <TextView
+                            style="@style/CustomTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/dyna_puff_regular"
+                            android:text="@string/Expenses"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.example.msareefapp.Ui.customeViews.CustomCircleViewWithPercent
+                            android:id="@+id/saving_percent"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            app:aboveCircleColor="@color/white"
+                            app:backgroundCircleColor="@color/black_light"
+                            app:circleTextColor="@color/white"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/appBarTittle_Tv"
+
+                            tools:circleText="100%" />
+
+                        <TextView
+
+                            style="@style/CustomTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/dyna_puff_regular"
+                            android:text="@string/saving"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/mainSalary_tittle"
+                    style="@style/CustomTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight="1"
+                    android:text="@string/salary"
+                    android:textColor="?attr/colorSecondary"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/act_salary_TV"
+                    style="@style/CustomTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingEnd="8dp"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    app:layout_constraintEnd_toStartOf="@id/mainSalary_tittle"
+                    tools:ignore="RtlSymmetry"
+                    tools:text="6000" />
+
+                <TextView
+                    android:id="@+id/remaining_value"
+                    style="@style/CustomTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:paddingEnd="8dp"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="2500" />
+
+                <TextView
+                    style="@style/CustomTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/remaining"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/remaining_value" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Categories_Rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_appBar"
+        tools:listitem="@layout/categories_statics" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,12 +11,13 @@ import com.example.data.dataSources.localDataBase.typeConverters.InvoiceTypeConv
 @TypeConverters(InvoiceTypeConverters::class)
 data class UserEntity(
     @PrimaryKey(true)
-    val userId: Int = 0,
+    val id: Int = 0,
     val userName: String? = null,
     val salary: String? = null,
+    val remainingSalary:String ?=salary,
     val notification: String? = null,
     val expectedSavings: String? = null,
-    val invoices: List<InvoiceEntity?>? = ArrayList<InvoiceEntity>()
+    val invoices: List<InvoiceEntity?>?= ArrayList<InvoiceEntity>()
 
 )
 

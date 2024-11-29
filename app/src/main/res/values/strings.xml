@@ -60,4 +60,6 @@
     <string name="balance">الميزانية</string>
     <string name="Expenses">الأنفاق</string>
     <string name="saving">الادخار</string>
+    <string name="salary">المرتب :</string>
+    <string name="remaining">المتبقي :</string>
 </resources>

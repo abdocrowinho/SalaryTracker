@@ -6,5 +6,5 @@ data class Invoice(
     val purchasedItems:List<PurchasedItem?>?=null,
     val dateTime:Long?=null,
     val time : Long ?=null,
-    val invoiceType : String
+    val categoryId : Int
 )

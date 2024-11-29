@@ -6,7 +6,8 @@ import android.view.ViewGroup
 import com.example.msareefapp.Bases.BaseAdapter
 import com.example.msareefapp.databinding.ItemBoardingBinding
 
-class BoardingAdapter(private val items : MutableList<ItemBoarding>) : BaseAdapter<ItemBoarding,ItemBoardingBinding>(items) {
+class BoardingAdapter(private val items : MutableList<ItemBoarding?>?) :
+    BaseAdapter<ItemBoarding,ItemBoardingBinding>(items) {
     override fun getViewBinding(
         inflater: LayoutInflater,
         parent: ViewGroup,
@@ -22,7 +23,7 @@ class BoardingAdapter(private val items : MutableList<ItemBoarding>) : BaseAdapt
     override fun getViewHolder(binding: ItemBoardingBinding): BaseViewHolder<ItemBoarding, ItemBoardingBinding> {
 return ItemViewHolder(binding)
     }
-    class ItemViewHolder(private val binding: ItemBoardingBinding ):BaseViewHolder<ItemBoarding,ItemBoardingBinding>(binding) {
+   private class ItemViewHolder(private val binding: ItemBoardingBinding ):BaseViewHolder<ItemBoarding,ItemBoardingBinding>(binding) {
         override fun bind(item: ItemBoarding) {
             binding.lottieAnimation.apply {
                 setFailureListener{
