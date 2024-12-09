@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.domain.entitys.User
-import com.example.domain.useCases.GetUserUseCase
+import com.example.domain.useCases.StaticsUseCases.GetUserUseCase
 import com.example.msareefapp.Bases.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

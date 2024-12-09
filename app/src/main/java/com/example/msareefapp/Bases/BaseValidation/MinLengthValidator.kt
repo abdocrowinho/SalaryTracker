@@ -6,7 +6,7 @@ class MinLengthValidator( val minLength: Int) :Validator<String>{
     }
 
     override fun errorMessage(): String {
-        return "الحقل ده لازم يحتوي على $minLength حرف"
+        return "this field should have $minLength letters"
     }
 
 }

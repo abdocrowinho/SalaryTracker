@@ -16,5 +16,9 @@
     <item name="android:textSize">18sp</item>
 
 </style>
+    <style name="CustomAlertDialogTheme" parent="ThemeOverlay.Material3.Dialog.Alert">
+        <item name="android:textColorPrimary">#000000</item> <!-- لون النص الأساسي -->
+        <item name="android:background">#FFFFFF</item> <!-- خلفية بيضاء -->
+    </style>
     <style name="Theme.MsareefApp" parent="Base.Theme.MsareefApp" />
 </resources>

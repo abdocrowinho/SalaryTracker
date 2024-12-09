@@ -1,10 +1,14 @@
 package com.example.domain.entitys
 
+import java.time.temporal.TemporalAmount
+
 
 data class Invoice(
     val id : Int ?=null ,
     val purchasedItems:List<PurchasedItem?>?=null,
-    val dateTime:Long?=null,
-    val time : Long ?=null,
-    val categoryId : Int
+    val dateTime:String?=null,
+    val time : String?=null,
+    val categoryId : Int?=null,
+    val amount: Double ?=0.0
+
 )

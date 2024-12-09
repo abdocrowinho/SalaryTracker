@@ -6,8 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.domain.entitys.CategoryStats
 import com.example.domain.entitys.User
-import com.example.domain.useCases.GetCategoryUseCase
-import com.example.domain.useCases.GetUserUseCase
+import com.example.domain.useCases.StaticsUseCases.GetCategoryUseCase
+import com.example.domain.useCases.StaticsUseCases.GetUserUseCase
 import com.example.msareefapp.Bases.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 @HiltViewModel
 class StaticsViewMode @Inject constructor
-    (private val getUserUseCase: GetUserUseCase, private val getCategoryStatsUseCase:GetCategoryUseCase  ) :
+    (private val getUserUseCase: GetUserUseCase, private val getCategoryStatsUseCase: GetCategoryUseCase) :
     BaseViewModel() {
     private var _userLiveData=MutableLiveData<User>()
     val userLiveData : LiveData<User> get () = _userLiveData

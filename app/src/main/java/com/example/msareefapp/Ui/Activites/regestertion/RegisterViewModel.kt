@@ -80,7 +80,7 @@ class RegisterViewModel @Inject constructor(
             FieldsValidation.validateFields(validators = validator, value = savingMoney)
     }
 
-    fun validateAllFields(
+    private fun validateAllFields(
         nickname: String,
         salary: String,
         notification: String,
@@ -111,7 +111,7 @@ class RegisterViewModel @Inject constructor(
         }
     }
 
-     fun insertUser(user: User) {
+     private fun insertUser(user: User) {
         viewModelScope.launch {
             useCase.invoke(user)
         }

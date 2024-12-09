@@ -23,8 +23,8 @@ data class InvoiceEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 1,
     val purchasedItems: List<PurchasedItem?>? = ArrayList<PurchasedItem>(),
-    val dateTime: Long? = null,
-    val time: Long? = null,
-    val categoryId: Int,
+    val dateTime: String? = null,
+    val time: String? = null,
+    val categoryId: Int ?= null,
     val amount: Double? = 0.0,
 )

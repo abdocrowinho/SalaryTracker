@@ -14,7 +14,7 @@ import com.example.data.dataSources.localDataBase.typeConverters.PurchasesTypeCo
 import com.example.data.dataSources.localDataBase.typeConverters.UserEntityToTypeConverter
 
 @Database(
-    entities = [UserEntity::class, InvoiceEntity::class,CategoryEntity::class], version = 5
+    entities = [UserEntity::class, InvoiceEntity::class,CategoryEntity::class], version = 7
 )
 @TypeConverters(
     InvoiceTypeConverters::class,

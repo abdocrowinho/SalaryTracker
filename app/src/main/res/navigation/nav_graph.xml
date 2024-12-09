@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/invoicesFragment"
-        android:name="com.example.msareefapp.Ui.Fragments.InvoicesFragment"
+        android:name="com.example.msareefapp.Ui.Fragments.Inovice.InvoicesFragment"
         android:label="fragment_invoices"
         tools:layout="@layout/fragment_invoices" >
 

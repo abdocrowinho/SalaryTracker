@@ -22,8 +22,8 @@ import javax.inject.Singleton
   ):UserRepos =userReposImpl
 
 
-        @Provides
         @Singleton
+        @Provides
         fun providesInvoiceRepos(
             invoiceRepoImpl: InvoiceRepoImpl
         ): InvoiceRepos =invoiceRepoImpl

@@ -1,9 +1,11 @@
 package com.example.data
 
+import com.example.data.dataSources.localDataBase.Entity.CategoryEntity
 import com.example.data.dataSources.localDataBase.Entity.CategoryStatsEntity
 import com.example.data.dataSources.localDataBase.Entity.InvoiceEntity
 import com.example.data.dataSources.localDataBase.Entity.PurchasedItem
 import com.example.data.dataSources.localDataBase.Entity.UserEntity
+import com.example.domain.entitys.Category
 import com.example.domain.entitys.CategoryStats
 import com.example.domain.entitys.Invoice
 import com.example.domain.entitys.User
@@ -31,11 +33,13 @@ fun User.toUserEntity(): UserEntity {
 
 fun Invoice.toInvoiceEntity(): InvoiceEntity {
     return InvoiceEntity(
-        id = id!!,
+        id = id?:0,
         purchasedItems = purchasedItems?.map { it?.toPurchasedItem() },
         time = time,
         dateTime = dateTime,
-        categoryId = categoryId
+        categoryId = categoryId,
+        amount = amount
+
 
     )
 }
@@ -48,6 +52,14 @@ fun CategoryStats.toCategoryStatsEntity(): CategoryStatsEntity{
         , salary = salary
     )
 }
+
+fun Category.toCategoryEntity():CategoryEntity {
+    return CategoryEntity(
+        id = id!!,
+        name = name
+    )
+}
+
 /*---------------------------domain to data-----------------------------*/
 
 
@@ -77,7 +89,9 @@ fun InvoiceEntity.toInvoice(): Invoice {
         purchasedItems = purchasedItems?.map { it?.toPurchasedItem() },
         time = time,
         dateTime = dateTime,
-        categoryId = categoryId
+        categoryId = categoryId,
+        amount = amount
+
     )
 }
 

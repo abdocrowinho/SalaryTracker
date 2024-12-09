@@ -1,11 +1,8 @@
 package com.example.data.dataSources.localDataBase.repositoryImpl
 
 import com.example.data.dataSources.localDataBase.Dao.InvoiceDao
-import com.example.data.dataSources.localDataBase.Entity.InvoiceEntity
-import com.example.data.dataSources.localDataBase.Entity.PurchasedItem
 import com.example.data.toInvoice
 import com.example.data.toInvoiceEntity
-import com.example.data.toPurchasedItem
 import com.example.domain.entitys.Invoice
 import com.example.domain.repos.InvoiceRepos
 import javax.inject.Inject

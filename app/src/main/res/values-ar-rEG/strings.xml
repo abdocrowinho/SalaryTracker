@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">مراقب المرتب</string>
+    <string name="action_settings">الاعدادات</string>
+    <string name="next">التالي</string>
+    <string name="salary_tracker">مراقب المرتب</string>
+    <string name="skip">تجاهل</string>
+    <string name="nick_name">اسمك المستعار</string>
+    <string name="enter_your_salary">مرتبك ؟</string>
+    <string name="svaing_goals">عاوز تحوش كام من المرتاب</string>
+    <string name="send">ابعت</string>
+    <string name="intro_of_register">طيب يا معلم، احنا هنا هنظبطلك شوية حاجات بسيطة عشان نتابع مرتبك وادخارك بشكل لذيذ عاوزينك بس تملى شوية البيانات دي : -</string>
+    <string name="register_done">تم التسجيل</string>
+    <string name="ok">ماشي</string>
+    <string name="Statics">الاحصائيات</string>
+    <string name="invoices">الفواتير</string>
+    <string name="profile">حسابي</string>
+    <string name="balance">الميزانية</string>
+    <string name="Expenses">الانفاق</string>
+    <string name="saving">الادخار</string>
+    <string name="salary">المرتب :</string>
+    <string name="remaining">المتبقي</string>
+    <string name="total">المجموع</string>
+    <string name="insert_your_first_invoice">"دخل اول فاتورة ليك "</string>
+    <string name="add_new_invoice">ضيف فاتورة جديدة</string>
+    <string name="add_new_item">ضيف حاجة تانية</string>
+    <string name="done">تم</string>
+    <string name="item">مشترى</string>
+    <string name="price">السعر</string>
+    <string name="type_invoice">نوع الفاتورة</string>
+    <string name="invoice_inserted_correctly">الفاتورة اتضافت تمام</string>
+    <string name="invalid_invoice">"مينفعش تضيف فاتورة فيها حقول فاضية "</string>
+</resources>

@@ -6,6 +6,6 @@ class NotEmptyValidator : Validator<String> {
     }
 
     override fun errorMessage(): String {
-        return "الحقل ده مينفعش يكون فاضي !"
+        return "this field should not be empty"
     }
 }
