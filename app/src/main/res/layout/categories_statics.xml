@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingVertical="8dp"
+    android:paddingHorizontal="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.example.msareefapp.Ui.customeViews.CustomCircleViewWithPercent
+        android:id="@+id/percent_view"
+        android:layout_width="75dp"
+        android:layout_height="100dp"
+        app:circleTextColor="?attr/colorPrimary"
+        app:circleText="75%"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:aboveCircleColor="?attr/colorPrimary"
+        app:backgroundCircleColor="@color/black_light"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@tools:sample/lorem"
+        android:textSize="30sp"
+style="@style/CustomTextStyle"/>
+    <LinearLayout
+        android:id="@+id/total_sum_LL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="إجمالي المبلغ"
+            android:textSize="15sp"
+            style="@style/CustomTextStyle"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            tools:text="غدد الفواتير"
+            android:textSize="15sp"
+            style="@style/CustomTextStyle"/>
+    </LinearLayout>
+    <LinearLayout
+        android:paddingHorizontal="8dp"
+        android:id="@+id/value_total_sum_LL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/total_sum_LL"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/tottalSum_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2500"
+            android:textSize="15sp"
+            style="@style/CustomTextStyle"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:id="@+id/numberOfInvoices_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="15"
+            android:textSize="15sp"
+            style="@style/CustomTextStyle"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

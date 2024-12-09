@@ -1,9 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+
 }
 
 android {
+    viewBinding {
+      enable = true
+    }
     namespace = "com.example.msareefapp"
     compileSdk = 34
 
@@ -34,11 +40,25 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        dataBinding = true
         viewBinding = true
     }
 }
 
 dependencies {
+
+    //viewModel&LiveData
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+//Dagger-Hilt
+
+    implementation(libs.hilt.android.v2511)
+    implementation(libs.androidx.activity)
+    kapt(libs.hilt.android.compiler)
+// lottie
+    implementation (libs.lottie)
+    implementation(project(":domain"))
+    implementation(project(":data"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

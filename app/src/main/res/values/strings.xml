@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">MsareefApp</string>
+    <string name="app_name">SalaryTracker</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
     <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="previous" translatable="false">Previous</string>
 
-    <string name="lorem_ipsum">
+    <string name="lorem_ipsum" translatable="false">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
         dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
@@ -43,4 +43,34 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="salary_tracker">Salary Tracker</string>
+    <string name="skip">Skip</string>
+    <string name="nick_name">Nick Name</string>
+    <string name="enter_your_salary">Your Salary</string>
+    <string name="svaing_goals">whats Your Saving Goal ?</string>
+    <string name="send">send</string>
+    <string name="intro_of_register">Alright mate, were gonna sort out a few simple things here to help you track your salary and savings in a fun way. Just need you to fill in these bits: -</string>
+    <string name="register_done">register is done</string>
+    <string name="ok">Okay</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="Statics">statics</string>
+    <string name="invoices">invoices</string>
+    <string name="profile">profile</string>
+    <string name="balance">balance</string>
+    <string name="Expenses">Expenses</string>
+    <string name="saving">saving</string>
+    <string name="salary">salary :</string>
+    <string name="remaining">remaining</string>
+    <string name="total">total</string>
+    <string name="insert_your_first_invoice">Insert Your First Invoice</string>
+    <string name="add_new_invoice">add new invoice</string>
+    <string name="add_new_item">add new Item</string>
+    <string name="done">done</string>
+    <string name="item">item</string>
+    <string name="price">price</string>
+    <string name="type_invoice">invoice type</string>
+    <string name="invoice_inserted_correctly">invoice inserted correctly</string>
+    <string name="invalid_invoice">"you should complete all fields to insert an invoice "</string>
+    <string name="please_enter_your_invoice_type">please enter your Invoice Type</string>
 </resources>

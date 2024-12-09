@@ -3,26 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/staticsFragment">
+
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.msareefapp.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/invoicesFragment"
+        android:name="com.example.msareefapp.Ui.Fragments.Inovice.InvoicesFragment"
+        android:label="fragment_invoices"
+        tools:layout="@layout/fragment_invoices" >
 
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.msareefapp.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/staticsFragment"
+        android:name="com.example.msareefapp.Ui.Fragments.Statics.StaticsFragment"
+        android:label="fragment_statics"
+        tools:layout="@layout/fragment_statics" >
 
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.msareefapp.Ui.Fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+
+
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.msareefapp.Ui.Activites.mainActivity.MainActivity"
+        android:label="MainActivity" />
+
 </navigation>
