@@ -110,8 +110,8 @@
 
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
-                            app:aboveCircleColor="@color/white"
-                            app:backgroundCircleColor="@color/black_light"
+                            app:aboveCircleColor="@color/black_light"
+                            app:backgroundCircleColor="@color/white"
                             app:circleTextColor="@color/white"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/appBarTittle_Tv"
@@ -139,8 +139,8 @@
 
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
-                            app:aboveCircleColor="@color/white"
-                            app:backgroundCircleColor="@color/black_light"
+                            app:aboveCircleColor="@color/black_light"
+                            app:backgroundCircleColor="@color/white"
                             app:circleTextColor="@color/white"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/appBarTittle_Tv"

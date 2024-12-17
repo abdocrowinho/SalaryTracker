@@ -103,19 +103,29 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/type_Invoice"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="70dp"
                     android:hint="@string/type_invoice"
                     android:paddingHorizontal="8dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/appBar"
-                    app:layout_constraintWidth_percent=".5">
+                    app:layout_constraintWidth_percent=".5"
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    >
 
-                        android:id="@+id/invoiceTypeValue"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="text" />
+                   <AutoCompleteTextView
+                       android:id="@+id/autoCompleteInvoiceType"
+                       android:paddingStart="16dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       tools:ignore="LabelFor,RtlSymmetry"
+                       android:inputType="text"
+                       android:editable="true"
+                       android:textSize="18sp"
+                       android:textColor="@color/black"
+
+                       android:completionThreshold="1"
+                       />
+
                 </com.google.android.material.textfield.TextInputLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 

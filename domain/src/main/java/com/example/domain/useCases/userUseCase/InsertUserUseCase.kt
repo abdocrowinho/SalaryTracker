@@ -1,4 +1,4 @@
-package com.example.domain.useCases
+package com.example.domain.useCases.userUseCase
 
 import com.example.domain.entitys.User
 import com.example.domain.repos.UserRepos

@@ -79,6 +79,7 @@ abstract class BaseFragment<vb : ViewBinding,
 
             }
         }
-        builder.create().show()
+        builder.show()
+
     }
 }

@@ -23,6 +23,7 @@ override fun getViewHolder(binding: CategoriesStaticsBinding): BaseViewHolder<Ca
      override fun bind(item: CategoryStats) {
          binding.tottalSumTv.text=item.totalExpenses.toString()
          binding.numberOfInvoicesId.text=item.numberOfInvoices.toString()
+         binding.categoryType.text = item.name
          binding.percentView.setPercentage((item.totalExpenses?.div(item.salary)?.times(100))!!.toFloat())
      }
  }

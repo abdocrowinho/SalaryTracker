@@ -5,11 +5,17 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
+import com.example.domain.entitys.Category
 import com.example.domain.entitys.Invoice
 import com.example.domain.entitys.PurchasedItem
 import com.example.msareefapp.Bases.BaseBottomSheet
 import com.example.msareefapp.Bases.UiMessage
+import com.example.msareefapp.R
+import com.example.msareefapp.Ui.sharedViewModels.SharedInvoiceViewModel
 import com.example.msareefapp.Utiltes.getDate
 import com.example.msareefapp.Utiltes.getDayOfWeek
 import com.example.msareefapp.databinding.AddInvoiceBottomSheetBinding
@@ -22,7 +28,8 @@ class AddInvoiceBottomSheetFragment :
     private lateinit var itemsRowAdapter: EnterPurchasedItemRowAdapter
     private var items: MutableList<PurchasedItem?> = mutableListOf()
 
-    private val _viewModel: BottomSheetViewModel by viewModels()
+    private val _sharedViewModel: SharedInvoiceViewModel by activityViewModels ()
+    private val _viewModel :BottomSheetViewModel by viewModels()
 
     override fun initViewModel(): BottomSheetViewModel {
         return _viewModel
@@ -40,16 +47,17 @@ class AddInvoiceBottomSheetFragment :
         initViews()
         observeUiMessage()
         observable()
+        _viewModel.getCategories()
 
     }
 
     private fun observable() {
-        _viewModel.uiMessageLiveData.observe(viewLifecycleOwner) { uiMessage ->
+        _sharedViewModel.uiMessageLiveData.observe(viewLifecycleOwner) { uiMessage ->
             uiMessage?.let {
                 showDialog(it)
             }
         }
-        _viewModel.invoiceTypeLiveData.observe(viewLifecycleOwner){ error ->
+        _sharedViewModel.invoiceTypeLiveData.observe(viewLifecycleOwner){ error ->
             if (error!!.isEmpty()){
                 binding?.typeInvoice?.helperText = null
                 binding?.typeInvoice?.isHelperTextEnabled =false
@@ -62,6 +70,14 @@ class AddInvoiceBottomSheetFragment :
             }
 
         }
+        _viewModel.getCategoriesLiveData.observe(viewLifecycleOwner){categories->
+            val adapter = ArrayAdapter(requireContext(),R.layout.auto_complate_builder, categories!!.toMutableList())
+            binding?.autoCompleteInvoiceType?.setAdapter(adapter)
+
+            Log.d("categories are : ", categories.toString())
+
+        }
+
     }
 
     private fun initViews() {
@@ -78,16 +94,16 @@ class AddInvoiceBottomSheetFragment :
             }
             doneBtn.setOnClickListener {
                 val isValid = itemsRowAdapter.itemsValidate()
-                _viewModel.doneButton(
+                _sharedViewModel.doneButton(
                     isValid, Invoice(
                         purchasedItems = items,
                         dateTime = binding!!.dateTimeTv.text.toString(),
                         time = binding!!.dayTimeTv.text.toString(),
                         amount = items.filterNotNull().sumOf { it.price ?:0.0}
-
                     ),
-                    binding?.invoiceTypeValue?.text.toString()
+                    binding?.autoCompleteInvoiceType?.text.toString()
                 )
+
             }
         }
     }

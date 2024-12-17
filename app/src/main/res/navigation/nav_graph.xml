@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.msareefapp.Ui.Fragments.ProfileFragment"
+        android:name="com.example.msareefapp.Ui.Fragments.profileFragment.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
 

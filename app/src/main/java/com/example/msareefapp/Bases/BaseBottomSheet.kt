@@ -65,7 +65,7 @@ abstract class BaseBottomSheet<Vb:ViewBinding , Vm:BaseViewModel> : BottomSheetD
 
             }
         }
-        builder.create().show()
+        builder.show()
     }
 
     abstract fun initViewModel(): Vm

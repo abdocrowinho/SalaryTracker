@@ -1,6 +1,5 @@
-package com.example.domain.useCases
+package com.example.domain.useCases.StaticsUseCases
 
-import android.util.Log
 import com.example.domain.entitys.User
 import com.example.domain.repos.UserRepos
 import javax.inject.Inject

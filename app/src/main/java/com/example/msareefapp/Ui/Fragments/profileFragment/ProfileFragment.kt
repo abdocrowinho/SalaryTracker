@@ -1,4 +1,4 @@
-package com.example.msareefapp.Ui.Fragments
+package com.example.msareefapp.Ui.Fragments.profileFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

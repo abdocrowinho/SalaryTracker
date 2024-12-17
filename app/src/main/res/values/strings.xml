@@ -73,4 +73,5 @@
     <string name="invoice_inserted_correctly">invoice inserted correctly</string>
     <string name="invalid_invoice">"you should complete all fields to insert an invoice "</string>
     <string name="please_enter_your_invoice_type">please enter your Invoice Type</string>
+    <string name="okay">okay</string>
 </resources>
