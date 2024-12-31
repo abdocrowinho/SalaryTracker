@@ -23,6 +23,12 @@ class InvoiceRepoImpl @Inject constructor(
         return invoiceDao.getInvoiceByDate(invoiceDate)?.map { it?.toInvoice() }
     }
 
+    override fun getInvoicesByCategoryId(categoryId: String): Flow<List<Invoice>> {
+      return  invoiceDao.getInvoiceByCategory(categoryId).map { invoices->
+          invoices.map { it.toInvoice() }
+      }
+    }
+
     override suspend fun insertInvoice(invoice: Invoice) {
         invoiceDao.insertInvoice(
             invoice.toInvoiceEntity()
