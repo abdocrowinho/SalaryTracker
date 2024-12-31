@@ -107,6 +107,12 @@ fun CategoryStatsEntity.toCategoryStats(): CategoryStats{
         salary = salary
     )
 }
+fun CategoryEntity.toCategoryEntity():Category {
+    return Category(
+        id = id,
+        name = name
+    )
+}
 
 /*---------------------------data to domain-----------------------------*/
 

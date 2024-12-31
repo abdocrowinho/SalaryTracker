@@ -41,8 +41,8 @@ class StaticsFragment : BaseFragment<FragmentStaticsBinding, StaticsViewMode>() 
             val salary = user.salary?.toFloat()
             val remainingSalary = user.remainingSalary?.toFloat()
             val expectedSaving = user.expectedSavings?.toFloat()
-            val saving = (salary?.div(expectedSaving!!)?.times(100))
-            val balance = (salary?.div(remainingSalary!!))?.times(100)
+            val saving = (remainingSalary?.div(expectedSaving!!)?.times(100))
+            val balance = (remainingSalary?.div(salary!!))?.times(100)
             val expenses = (salary?.minus(remainingSalary!!))?.div(salary)?.times(100)
             binding?.apply {
                 remainingValue.text = user.remainingSalary

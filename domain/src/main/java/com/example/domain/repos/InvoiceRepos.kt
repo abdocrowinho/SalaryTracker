@@ -1,9 +1,10 @@
 package com.example.domain.repos
 
 import com.example.domain.entitys.Invoice
+import kotlinx.coroutines.flow.Flow
 
 interface InvoiceRepos {
-    suspend fun getAllInvoice():List<Invoice?>?
+     fun getAllInvoice():Flow< List<Invoice?>?>
 
     suspend fun getInvoiceByDate(invoiceDate:Long):List<Invoice?>?
 

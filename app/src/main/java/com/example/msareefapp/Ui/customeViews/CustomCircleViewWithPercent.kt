@@ -8,6 +8,7 @@ import android.provider.CalendarContract.Colors
 import android.util.AttributeSet
 import android.view.View
 import com.example.msareefapp.R
+import kotlin.math.roundToInt
 
 class CustomCircleViewWithPercent @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
@@ -50,7 +51,7 @@ class CustomCircleViewWithPercent @JvmOverloads constructor(
 
     fun setPercentage(value: Float) {
         percentage = value
-        circleText = "${percentage}%"// م الـ View
+        circleText = "${percentage.roundToInt()}%"// م الـ View
         invalidate() // إعادة رس
     }
 

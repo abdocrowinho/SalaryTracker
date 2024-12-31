@@ -1,13 +1,12 @@
 package com.example.msareefapp.Ui.Activites.regestertion
 
-import android.provider.ContactsContract.CommonDataKinds.Nickname
 import android.view.View
 import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.domain.entitys.User
-import com.example.domain.useCases.InsertUserUseCase
+import com.example.domain.useCases.userUseCase.InsertUserUseCase
 import com.example.msareefapp.Bases.BaseValidation.FieldsValidation
 import com.example.msareefapp.Bases.BaseValidation.MinLengthValidator
 import com.example.msareefapp.Bases.BaseValidation.NotEmptyValidator

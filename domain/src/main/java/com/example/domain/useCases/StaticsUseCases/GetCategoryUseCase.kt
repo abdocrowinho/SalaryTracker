@@ -1,4 +1,4 @@
-package com.example.domain.useCases
+package com.example.domain.useCases.StaticsUseCases
 
 import com.example.domain.entitys.CategoryStats
 import com.example.domain.repos.CategoryRepos

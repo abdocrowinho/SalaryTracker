@@ -1,7 +1,6 @@
 package com.example.domain.repos
 
 import com.example.domain.entitys.User
-import dagger.Provides
 
 interface UserRepos {
     suspend fun getUser():User?

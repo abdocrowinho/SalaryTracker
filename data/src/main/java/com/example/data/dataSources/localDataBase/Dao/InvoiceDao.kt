@@ -7,11 +7,12 @@ import androidx.room.Query
 import androidx.room.Update
 import com.example.data.Constants
 import com.example.data.dataSources.localDataBase.Entity.InvoiceEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface InvoiceDao {
-    @Query("Select * From Invoice")
-    suspend fun getAllInvoice():List<InvoiceEntity?>?
+    @Query("SELECT * FROM invoice ORDER BY id DESC")
+     fun getAllInvoice(): Flow< List<InvoiceEntity?>?>
 
     @Query("Select * From Invoice Where ${Constants.INVOICE_DATE_TIME}=:invoiceDate ")
     suspend fun getInvoiceByDate(invoiceDate:Long):List<InvoiceEntity?>?

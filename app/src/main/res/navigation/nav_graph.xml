@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.msareefapp.Ui.Fragments.ProfileFragment"
+        android:name="com.example.msareefapp.Ui.Fragments.profileFragment.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
 
@@ -32,5 +32,22 @@
         android:id="@+id/mainActivity"
         android:name="com.example.msareefapp.Ui.Activites.mainActivity.MainActivity"
         android:label="MainActivity" />
+    <activity
+        android:id="@+id/editProfileActivity"
+        android:name="com.example.msareefapp.Ui.Activites.EditProfile.EditProfileActivity"
+        android:label="activity_edit_profile"
+        tools:layout="@layout/activity_edit_profile" />
+    <activity
+        android:id="@+id/categoryInvoices"
+        android:name="com.example.msareefapp.Ui.Activites.CategoryInvoices.CategoryInvoices"
+        android:label="activity_category_invoices"
+        tools:layout="@layout/activity_category_invoices" >
+        <argument
+            android:name="categoryId"
+            app:argType="string" />
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+    </activity>
 
 </navigation>

@@ -15,7 +15,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 @HiltViewModel
 class StaticsViewMode @Inject constructor
-    (private val getUserUseCase: GetUserUseCase, private val getCategoryStatsUseCase: GetCategoryUseCase) :
+    (private val getUserUseCase: GetUserUseCase,
+     private val getCategoryStatsUseCase: GetCategoryUseCase
+            ) :
     BaseViewModel() {
     private var _userLiveData=MutableLiveData<User>()
     val userLiveData : LiveData<User> get () = _userLiveData

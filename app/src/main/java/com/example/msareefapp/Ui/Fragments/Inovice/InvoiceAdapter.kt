@@ -6,7 +6,7 @@ import com.example.domain.entitys.Invoice
 import com.example.msareefapp.Bases.BaseAdapter
 import com.example.msareefapp.databinding.InvoiceItemBinding
 
-class InvoiceAdapter(val invoicesList:MutableList<Invoice?>?) : BaseAdapter<Invoice,InvoiceItemBinding>(invoicesList) {
+class InvoiceAdapter( val invoicesList:MutableList<Invoice?>?) : BaseAdapter<Invoice,InvoiceItemBinding>(invoicesList) {
     override fun getViewBinding(
         inflater: LayoutInflater,
         parent: ViewGroup,
@@ -22,6 +22,7 @@ class InvoiceAdapter(val invoicesList:MutableList<Invoice?>?) : BaseAdapter<Invo
         override fun bind(item: Invoice) {
             binding.purchasedItemsRV.adapter=PurchasedItemAdapter(item.purchasedItems?.toMutableList())
             binding.dateTv.text= item.dateTime.toString()
+            binding.totalValue.text= item.amount.toString()
         }
     }
 }

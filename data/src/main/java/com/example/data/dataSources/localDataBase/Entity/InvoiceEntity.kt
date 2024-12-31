@@ -25,6 +25,6 @@ data class InvoiceEntity(
     val purchasedItems: List<PurchasedItem?>? = ArrayList<PurchasedItem>(),
     val dateTime: String? = null,
     val time: String? = null,
-    val categoryId: Int ?= null,
+    val categoryId: Long ?= null,
     val amount: Double? = 0.0,
 )
