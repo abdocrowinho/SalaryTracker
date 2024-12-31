@@ -30,4 +30,13 @@
     <string name="type_invoice">نوع الفاتورة</string>
     <string name="invoice_inserted_correctly">الفاتورة اتضافت تمام</string>
     <string name="invalid_invoice">"مينفعش تضيف فاتورة فيها حقول فاضية "</string>
+    <string name="please_enter_your_invoice_type">دخل نوع الفاتورة</string>
+    <string name="okay">اشطا</string>
+    <string name="all_fields_should_not_be_null">كل الحقول مينفعش تكون فاضية</string>
+    <string name="user_update_correctly">تم تحديث الحساب بنجاح</string>
+    <string name="edit_profile">تعديل الحساب</string>
+    <string name="night_mode">"الوضع الليلي "</string>
+    <string name="language">اللغة</string>
+    <string name="عربي">arabic</string>
+    <string name="english">انجليزي</string>
 </resources>
