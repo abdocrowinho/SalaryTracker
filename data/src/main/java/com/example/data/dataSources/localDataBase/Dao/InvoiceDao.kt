@@ -16,7 +16,8 @@ interface InvoiceDao {
 
     @Query("Select * From Invoice Where ${Constants.INVOICE_DATE_TIME}=:invoiceDate ")
     suspend fun getInvoiceByDate(invoiceDate:Long):List<InvoiceEntity?>?
-
+    @Query("Select * From INVOICE where categoryId=:categoryId")
+fun getInvoiceByCategory(categoryId : String):Flow<List<InvoiceEntity>>
     @Insert
     suspend fun insertInvoice(invoice: InvoiceEntity)
 

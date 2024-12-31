@@ -5,11 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.domain.entitys.CategoryStats
 import com.example.domain.entitys.User
 import com.example.msareefapp.Bases.BaseFragment
+import com.example.msareefapp.Utiltes.Constants
 import com.example.msareefapp.databinding.FragmentStaticsBinding
 import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.R
 
 @AndroidEntryPoint
 class StaticsFragment : BaseFragment<FragmentStaticsBinding, StaticsViewMode>() {
@@ -34,6 +37,13 @@ class StaticsFragment : BaseFragment<FragmentStaticsBinding, StaticsViewMode>() 
     private fun initStatics(categoriesStats: List<CategoryStats?>?){
        val categoriesAdapter = CategoriesAdapter(categoriesStats?.toMutableList())
         binding?.CategoriesRv?.adapter = categoriesAdapter
+        categoriesAdapter.onItemClickListener = CategoriesAdapter.OnItemClick{id,name->
+            val  bundle = Bundle()
+            bundle.putString(Constants.CATEGORY_ID,id)
+            bundle.putString(Constants.CATEGORY_NAME,name)
+            findNavController().navigate(com.example.msareefapp.R.id.categoryInvoices,bundle)
+
+        }
     }
 
     private fun initUserData(user: User?) {
@@ -59,6 +69,7 @@ class StaticsFragment : BaseFragment<FragmentStaticsBinding, StaticsViewMode>() 
 
 
     private fun initViews() {
+
     }
 
 

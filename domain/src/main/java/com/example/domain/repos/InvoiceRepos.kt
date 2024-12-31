@@ -7,7 +7,7 @@ interface InvoiceRepos {
      fun getAllInvoice():Flow< List<Invoice?>?>
 
     suspend fun getInvoiceByDate(invoiceDate:Long):List<Invoice?>?
-
+fun getInvoicesByCategoryId(categoryId:String): Flow<List<Invoice>>
     suspend fun insertInvoice(invoice: Invoice)
 
     suspend fun updateInvoice(invoice: Invoice)
