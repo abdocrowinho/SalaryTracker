@@ -60,7 +60,7 @@
     <string name="balance">balance</string>
     <string name="Expenses">Expenses</string>
     <string name="saving">saving</string>
-    <string name="salary">salary :</string>
+    <string name="salary">salary</string>
     <string name="remaining">remaining</string>
     <string name="total">total</string>
     <string name="insert_your_first_invoice">Insert Your First Invoice</string>
@@ -74,4 +74,13 @@
     <string name="invalid_invoice">"you should complete all fields to insert an invoice "</string>
     <string name="please_enter_your_invoice_type">please enter your Invoice Type</string>
     <string name="okay">okay</string>
+    <string name="all_fields_should_not_be_null">all fields should not be null or empty</string>
+    <string name="user_update_correctly">user updated Correctly</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="night_mode">night mode</string>
+    <string name="language">language</string>
+    <string name="عربي">arabic</string>
+    <string name="english">English</string>
+    <string name="notification_times">notification times</string>
+    <string name="update">update</string>
 </resources>

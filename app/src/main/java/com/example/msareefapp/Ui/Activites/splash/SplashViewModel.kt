@@ -1,5 +1,6 @@
 package com.example.msareefapp.Ui.Activites.splash
 
+import android.content.res.Resources
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,6 +10,7 @@ import com.example.domain.useCases.StaticsUseCases.GetUserUseCase
 import com.example.msareefapp.Bases.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import java.util.Locale
 import javax.inject.Inject
 @HiltViewModel
 class SplashViewModel @Inject constructor(
@@ -29,5 +31,14 @@ class SplashViewModel @Inject constructor(
 
             }
         }
+    }
+    fun setLanguage(lan: String, resources: Resources) {
+        val locale = Locale(lan)
+        val res : Resources = resources
+        val dm = res.displayMetrics
+        val conf = res.configuration
+        conf.setLocale(locale)
+        res.updateConfiguration(conf,dm)
+
     }
 }

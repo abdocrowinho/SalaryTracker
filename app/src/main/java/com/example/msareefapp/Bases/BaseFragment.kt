@@ -39,7 +39,7 @@ abstract class BaseFragment<vb : ViewBinding,
         observeUiMessage()
     }
 
-      fun observeUiMessage(){
+      private fun observeUiMessage(){
          viewModel.uiMessageLiveData.observe(viewLifecycleOwner){ uiMessage ->
           uiMessage?.let { showDialog(it) }
          }

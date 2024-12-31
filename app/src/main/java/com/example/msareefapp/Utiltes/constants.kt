@@ -13,5 +13,11 @@ object Constants {
            ItemBoarding(R.raw.animation,"استلم تنبيهات ذكية لو مصروفاتك بدأت تتجاوز 50% من راتبك. كمان هنوفر لك إشعارات تحفيزية لمساعدتك على الادخار وتجنب الإنفاق المفرط!")
        )
     const val APP_DATA_BASE_NAME = "SalaryTracker-Database"
-
+    const val SHARED_PREF = "myPref"
+    const val IS_NIGH_MODE = "nightMode"
+    const val DEFAULT_LANGUAGE= "defaultLan"
+const val ARABIC = "ar"
+    const val ENGLISH = "en"
+    const val CATEGORY_ID="categoryId"
+    const val CATEGORY_NAME="categoryName"
 }
