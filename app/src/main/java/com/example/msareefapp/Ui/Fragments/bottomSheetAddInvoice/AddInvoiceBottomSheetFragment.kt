@@ -8,18 +8,14 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.example.domain.entitys.Category
 import com.example.domain.entitys.Invoice
 import com.example.domain.entitys.PurchasedItem
 import com.example.msareefapp.Bases.BaseBottomSheet
-import com.example.msareefapp.Bases.UiMessage
 import com.example.msareefapp.R
 import com.example.msareefapp.Ui.sharedViewModels.SharedInvoiceViewModel
 import com.example.msareefapp.Utiltes.getDate
 import com.example.msareefapp.Utiltes.getDayOfWeek
 import com.example.msareefapp.databinding.AddInvoiceBottomSheetBinding
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

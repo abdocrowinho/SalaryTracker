@@ -29,6 +29,7 @@ class StaticsFragment : BaseFragment<FragmentStaticsBinding, StaticsViewMode>() 
             initUserData(user)
         }
         _viewModel.categoryStats.observe(viewLifecycleOwner){categoriesStats ->
+
             initStatics(categoriesStats)
         }
 

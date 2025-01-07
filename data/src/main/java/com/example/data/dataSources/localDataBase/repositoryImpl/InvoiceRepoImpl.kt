@@ -1,16 +1,19 @@
 package com.example.data.dataSources.localDataBase.repositoryImpl
 
+import com.example.data.dataSources.localDataBase.Dao.CategoryDao
 import com.example.data.dataSources.localDataBase.Dao.InvoiceDao
 import com.example.data.toInvoice
 import com.example.data.toInvoiceEntity
 import com.example.domain.entitys.Invoice
 import com.example.domain.repos.InvoiceRepos
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class InvoiceRepoImpl @Inject constructor(
-    private val invoiceDao: InvoiceDao
+    private val invoiceDao: InvoiceDao,
+    private val categoryDao: CategoryDao
 
 ) : InvoiceRepos {
     override  fun getAllInvoice():Flow<List<Invoice?>?> {
@@ -42,6 +45,15 @@ class InvoiceRepoImpl @Inject constructor(
     }
 
     override suspend fun deleteInvoice(invoice: Invoice) {
-        invoiceDao.deleteInvoice(invoice.toInvoiceEntity())
+       val category = invoice.categoryId?.let { categoryDao.getCategoryById(it) }
+        val invoicesCategoryList = invoiceDao.getInvoiceByCategory(invoice.categoryId.toString()).first()
+
+            if (invoicesCategoryList.size == 1){
+                invoiceDao.deleteInvoice(invoice.toInvoiceEntity())
+                category?.let { it1 -> categoryDao.deleteCategory(it1) }
+            }else{
+                invoiceDao.deleteInvoice(invoice.toInvoiceEntity())
+
+        }
     }
 }

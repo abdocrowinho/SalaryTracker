@@ -2,6 +2,7 @@ package com.example.data.dataSources.localDataBase.Dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -35,6 +36,12 @@ interface CategoryDao {
 
   @Insert(onConflict = OnConflictStrategy.IGNORE)
  suspend fun insertCategory(category : CategoryEntity):Long
+
+ @Delete
+ suspend fun deleteCategory(category: CategoryEntity)
+ @Query("Select * From category where id =:categoryId")
+ suspend fun getCategoryById(categoryId:Long):CategoryEntity
+
 }
 
 

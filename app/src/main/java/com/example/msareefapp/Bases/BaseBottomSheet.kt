@@ -32,11 +32,19 @@ abstract class BaseBottomSheet<Vb:ViewBinding , Vm:BaseViewModel> : BottomSheetD
         _binding = inflateBinding(inflater,container)
         return _binding?.root
     }
-     fun observeUiMessage(){
+  private  var isDialogShowIn = false
+
+    fun observeUiMessage(){
         _viewModel.uiMessageLiveData.observe(viewLifecycleOwner){ uiMessage ->
-            uiMessage?.let { showDialog(it) }
+            uiMessage?.let {
+                if (isDialogShowIn){
+                    showDialog(it)
+                }
+                }
         }
     }
+
+    var alertDialog : AlertDialog?=null
     fun showDialog(uiMessage: UiMessage) {
         val builder = AlertDialog.Builder(requireContext(), R.style.CustomAlertDialogTheme)
          builder.setCancelable(uiMessage.isCancelable?:true)
@@ -55,19 +63,33 @@ abstract class BaseBottomSheet<Vb:ViewBinding , Vm:BaseViewModel> : BottomSheetD
         }
         uiMessage.negText?.let { negText ->
             builder.setNegativeButton(negText) { _, _ ->
+
                 uiMessage.negActionButton?.onCLickDialogListener()
+                hideDialog()
 
             }
         }
         uiMessage.negTextId?.let { negTextId ->
             builder.setNegativeButton(negTextId) { _, _ ->
                 uiMessage.negActionButton?.onCLickDialogListener()
+                hideDialog()
 
             }
         }
+        isDialogShowIn =true
+        alertDialog = builder.create()
         builder.show()
     }
+fun hideDialog(){
+    alertDialog?.dismiss()
+    alertDialog = null
+    isDialogShowIn = false
+}
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+      hideDialog()
+    }
     abstract fun initViewModel(): Vm
     abstract fun inflateBinding(inflater : LayoutInflater,container:ViewGroup?):Vb
 }

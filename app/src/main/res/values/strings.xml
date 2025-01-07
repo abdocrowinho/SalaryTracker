@@ -83,4 +83,9 @@
     <string name="english">English</string>
     <string name="notification_times">notification times</string>
     <string name="update">update</string>
+    <string name="update_invoice">Update Invoice</string>
+    <string name="invoice_updated_correctly">invoice Updated Correctly</string>
+    <string name="are_you_sure_about_delete_this_invoice">"are you sure about delete this Invoice "</string>
+    <string name="cancel">cancel</string>
+    <string name="yes_iam_sure">yes, iam sure</string>
 </resources>

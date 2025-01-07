@@ -1,7 +1,6 @@
-package com.example.msareefapp.Ui.Activites.EditProfile
+package com.example.msareefapp.Ui.Activites.updateProfile
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import com.example.domain.entitys.User
 import com.example.msareefapp.Bases.BaseActivity
@@ -27,11 +26,21 @@ class EditProfileActivity :BaseActivity<ActivityEditProfileBinding,EditProfileVi
         _viewModel.oldUserLiveData.observe(this){user->
             binding.apply {
                 user?.let {
+
                         nickNameValue.setText(it.userName)
                         salaryValue.setText(it.salary)
                         notificationValue.setText(it.notification)
                         expectedValue.setText(it.expectedSavings)
                 }
+
+                    updateBtn.setOnClickListener{
+                        val newUser = user.copy(userId = 1, userName = binding.nickNameValue.text.toString()?:user.userName,
+                            salary = binding.salaryValue.text.toString(),
+                            notification = binding.notificationValue.text.toString(),
+                            expectedSavings = binding.expectedValue.text.toString()
+                            )
+                        _viewModel.updateButton(newUser)
+                    }
             }
 
         }
@@ -67,13 +76,9 @@ class EditProfileActivity :BaseActivity<ActivityEditProfileBinding,EditProfileVi
     }
 
     private fun initViews() {
+
         binding.apply {
-            updateBtn.setOnClickListener{
-                val newUser = User(userId = 1, userName = nickNameValue.text.toString(), salary = salaryValue.text.toString()
-                , notification = notificationValue.text.toString(), expectedSavings = expectedValue.text.toString()
-                )
-                _viewModel.updateButton(newUser)
-            }
+
 materialToolBar.setNavigationOnClickListener{
     finish()
 }

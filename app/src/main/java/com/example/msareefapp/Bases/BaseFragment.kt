@@ -39,32 +39,36 @@ abstract class BaseFragment<vb : ViewBinding,
         observeUiMessage()
     }
 
-      private fun observeUiMessage(){
-         viewModel.uiMessageLiveData.observe(viewLifecycleOwner){ uiMessage ->
-          uiMessage?.let { showDialog(it) }
-         }
-     }
+    private fun observeUiMessage() {
+        viewModel.uiMessageLiveData.observe(viewLifecycleOwner) { uiMessage ->
+            uiMessage?.let {
+                if (alertDialog==null) {
+                    showDialog(it)
+                }
+            }
+        }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 
-    abstract fun inflateBinding(inflater: LayoutInflater, container: ViewGroup?): vb
 
+
+    abstract fun inflateBinding(inflater: LayoutInflater, container: ViewGroup?): vb
+    var alertDialog: AlertDialog? = null
     fun showDialog(uiMessage: UiMessage) {
         val builder = AlertDialog.Builder(requireContext())
-        uiMessage.isCancelable.let { builder.setCancelable(it?:true) }
+        uiMessage.isCancelable.let { builder.setCancelable(it ?: true) }
         uiMessage.message?.let { builder.setMessage(it) }
         uiMessage.messageId?.let { builder.setMessage(it) }
         uiMessage.posText?.let { posText ->
             builder.setPositiveButton(posText) { _, _ ->
                 uiMessage.posActionButton?.onCLickDialogListener()
+                hideDialog()
             }
         }
         uiMessage.posTextId?.let { textId ->
             builder.setPositiveButton(textId) { _, _ ->
                 uiMessage.posActionButton?.onCLickDialogListener()
+                hideDialog()
             }
         }
         uiMessage.negText?.let { negText ->
@@ -79,7 +83,21 @@ abstract class BaseFragment<vb : ViewBinding,
 
             }
         }
-        builder.show()
+        alertDialog = builder.create()
+        alertDialog!!.show()
+
+    }
+
+    fun hideDialog() {
+        alertDialog?.let { if (it.isShowing) it.dismiss()  }
+        alertDialog = null
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        hideDialog()
+        _binding = null
 
     }
 }
