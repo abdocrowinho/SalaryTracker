@@ -1,7 +1,11 @@
 package com.example.msareefapp.Ui.Fragments.Statics
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
+import androidx.transition.Visibility
 import com.example.domain.entitys.CategoryStats
 import com.example.domain.entitys.Invoice
 import com.example.msareefapp.Bases.BaseAdapter
@@ -27,13 +31,18 @@ override fun getViewHolder(binding: CategoriesStaticsBinding): BaseViewHolder<Ca
     ) : BaseViewHolder<CategoryStats,CategoriesStaticsBinding>(binding){
 
     override fun bind(item: CategoryStats) {
-         binding.tottalSumTv.text=item.totalExpenses.toString()
-         binding.numberOfInvoicesId.text=item.numberOfInvoices.toString()
-         binding.categoryType.text = item.name
-         binding.percentView.setPercentage((item.totalExpenses?.div(item.salary)?.times(100))!!.toFloat())
-         binding.root.setOnClickListener{
-listener?.onClickListener(categoryId = item.id.toString(),item.name.toString())
-         }
+       if (item.numberOfInvoices != 0){
+           binding.tottalSumTv.text=item.totalExpenses.toString()
+           binding.numberOfInvoicesId.text=item.numberOfInvoices.toString()
+           binding.categoryType.text = item.name
+           binding.percentView.setPercentage((item.totalExpenses?.div(item.salary)?.times(100))!!.toFloat())
+           binding.root.setOnClickListener{
+               listener?.onClickListener(categoryId = item.id.toString(),item.name.toString())
+           }
+       }else{
+           binding.percentView.visibility = View.GONE
+       }
+
      }
  }
  fun  interface OnItemClick {

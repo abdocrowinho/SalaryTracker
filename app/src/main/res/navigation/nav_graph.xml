@@ -34,7 +34,7 @@
         android:label="MainActivity" />
     <activity
         android:id="@+id/editProfileActivity"
-        android:name="com.example.msareefapp.Ui.Activites.EditProfile.EditProfileActivity"
+        android:name="com.example.msareefapp.Ui.Activites.updateProfile.EditProfileActivity"
         android:label="activity_edit_profile"
         tools:layout="@layout/activity_edit_profile" />
     <activity
@@ -48,6 +48,15 @@
         <argument
             android:name="categoryName"
             app:argType="string" />
+    </activity>
+    <activity
+        android:id="@+id/updateInvoice"
+        android:name="com.example.msareefapp.Ui.Activites.UpdateInvoice.UpdateInvoice"
+        android:label="activity_update_invoice"
+        tools:layout="@layout/activity_update_invoice" >
+        <argument
+            android:name="invoice"
+            app:argType="com.example.domain.entitys.Invoice" />
     </activity>
 
 </navigation>

@@ -7,6 +7,7 @@ plugins {
 }
 
 android {
+
     viewBinding {
       enable = true
     }
@@ -46,7 +47,7 @@ android {
 }
 
 dependencies {
-
+    implementation ("com.github.zerobranch:SwipeLayout:1.3.1")
     //viewModel&LiveData
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)

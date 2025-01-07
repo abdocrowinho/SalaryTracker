@@ -20,4 +20,5 @@ const val ARABIC = "ar"
     const val ENGLISH = "en"
     const val CATEGORY_ID="categoryId"
     const val CATEGORY_NAME="categoryName"
+    const val INVOICE_KEY ="invoice"
 }

@@ -1,6 +1,5 @@
-package com.example.msareefapp.Ui.Activites.EditProfile
+package com.example.msareefapp.Ui.Activites.updateProfile
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -72,7 +71,7 @@ class EditProfileViewModel @Inject constructor(
 
 
    fun updateButton(user: User){
-        if (validateAllFields(userName = user.userName!!, salary = user.salary!!,
+        if (validateAllFields( userName = user.userName!!, salary = user.salary!!,
                 notification = user.notification!!, expensesSalary = user.expectedSavings!!)){
             updateUser(user)
             val uiMessage = UiMessage.Builder().setMessageId(R.string.user_update_correctly).build()

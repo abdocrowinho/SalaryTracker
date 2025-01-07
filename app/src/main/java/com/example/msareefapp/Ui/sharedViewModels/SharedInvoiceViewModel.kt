@@ -7,6 +7,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.domain.entitys.Invoice
 import com.example.domain.useCases.InvoicesUseCases.GetAllInvoicesUseCase
 import com.example.domain.useCases.InvoicesUseCases.InsertInvoicesUseCase
+import com.example.domain.useCases.InvoicesUseCases.UpdateInvoiceUseCase
+import com.example.domain.useCases.categoriesUseCase.GetCategoriesUseCase
 import com.example.msareefapp.Bases.BaseValidation.FieldsValidation
 import com.example.msareefapp.Bases.BaseValidation.MinLengthValidator
 import com.example.msareefapp.Bases.BaseValidation.NotEmptyValidator
@@ -20,14 +22,19 @@ import javax.inject.Inject
 @HiltViewModel
 class SharedInvoiceViewModel @Inject constructor(
     private val insertInvoicesUseCase: InsertInvoicesUseCase,
-    private val getAllInvoicesUseCase: GetAllInvoicesUseCase
+    private val getAllInvoicesUseCase: GetAllInvoicesUseCase,
+    private val updateInvoiceUseCase: UpdateInvoiceUseCase,
+    private  val getCategoriesUseCase: GetCategoriesUseCase
 ) :BaseViewModel() {
     private  var _invoiceTypeLiveData = MutableLiveData<List<String?>?>()
     val invoiceTypeLiveData : LiveData<List<String?>?> get() = _invoiceTypeLiveData
 
     private var  _invoicesLiveData = MutableLiveData<List<Invoice?>?>()
-
     val invoicesLiveData : LiveData<List<Invoice?>?> get() = _invoicesLiveData
+
+    private var _categoriesLiveData = MutableLiveData<List<String?>?>()
+    val categoriesLiveData : LiveData<List<String?>?>get() = _categoriesLiveData
+
     fun getAllInvoices(){
         viewModelScope.launch {
             getAllInvoicesUseCase.invoke().collect {
@@ -39,7 +46,6 @@ class SharedInvoiceViewModel @Inject constructor(
     private fun insertInvoice(invoice : Invoice, categoryName:String){
         viewModelScope.launch {
             insertInvoicesUseCase.invoke(invoice,categoryName)
-
         }
     }
 
@@ -66,6 +72,40 @@ class SharedInvoiceViewModel @Inject constructor(
         }else {
             val uiMessage =  UiMessage.Builder().setMessageId(R.string.please_enter_your_invoice_type).setIsCancelable(true) .build()
             handleUiMessage(uiMessage = uiMessage)
+        }
+
+    }
+    private fun updateInvoice(invoice: Invoice,invoiceType: String){
+        viewModelScope.launch {
+            updateInvoiceUseCase.invoke(invoice)
+        }
+    }
+    fun updateButton(invoice: Invoice , isValid : Boolean , invoiceType:String){
+        validateInvoiceType(invoiceType)
+        if (invoiceTypeLiveData.value.isNullOrEmpty()){
+            if (isValid){
+                updateInvoice(invoice,invoiceType)
+                val uiMessage =  UiMessage.Builder().setMessageId(R.string.invoice_updated_correctly).build()
+                handleUiMessage(uiMessage = uiMessage)
+                Log.d("uiMessage",uiMessage.message.toString())
+
+            }else {
+                val uiMessage =  UiMessage.Builder().setMessageId(R.string.invalid_invoice).setIsCancelable(true) .build()
+                handleUiMessage(uiMessage = uiMessage)
+            }
+        }else {
+            val uiMessage =  UiMessage.Builder().setMessageId(R.string.please_enter_your_invoice_type).setIsCancelable(true) .build()
+            handleUiMessage(uiMessage = uiMessage)
+        }
+
+    }
+
+    fun getCategories(){
+        viewModelScope.launch {
+            getCategoriesUseCase.invoke().collect{categories->
+                _categoriesLiveData.value=categories
+
+            }
         }
 
     }

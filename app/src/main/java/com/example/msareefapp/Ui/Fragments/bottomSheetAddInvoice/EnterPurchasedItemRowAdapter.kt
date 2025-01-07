@@ -65,7 +65,12 @@ class EnterPurchasedItemRowAdapter(
     private class ItemHolder(val binding: EnterPurchasedRowBinding) :
         BaseViewHolder<PurchasedItem, EnterPurchasedRowBinding>(binding) {
         override fun bind(item: PurchasedItem) {
-
+binding.itemNameValue.setText(item.name)
+            val priceText = when(item.price){
+                null -> 0
+                else ->item.price
+            }
+            binding.purchasedPriceValue.setText(priceText.toString())
             val minLengthValidator = MinLengthValidator(1)
             val notEmptyValidator = NotEmptyValidator()
             binding.itemNameValue.addTextChangedListener {
@@ -108,5 +113,10 @@ class EnterPurchasedItemRowAdapter(
 
 
         }
+    }
+    fun updateData(newList: List<PurchasedItem?>) {
+        purchasedItem?.clear()
+        purchasedItem?.addAll(newList)
+        notifyDataSetChanged()
     }
 }
