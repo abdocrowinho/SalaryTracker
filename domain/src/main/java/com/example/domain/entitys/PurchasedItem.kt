@@ -5,6 +5,8 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class PurchasedItem(
+    val id : Int ?=null,
     var name: String?=null,
-    var price: Double?=null
+    var price: Double?=null,
+    val invoiceId: Int ?= null
 ):Parcelable

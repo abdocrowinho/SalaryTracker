@@ -88,4 +88,7 @@
     <string name="are_you_sure_about_delete_this_invoice">"are you sure about delete this Invoice "</string>
     <string name="cancel">cancel</string>
     <string name="yes_iam_sure">yes, iam sure</string>
+    <string name="most_purchased">Most purchased</string>
+    <string name="days">Days</string>
+    <string name="categories">Categories</string>
 </resources>

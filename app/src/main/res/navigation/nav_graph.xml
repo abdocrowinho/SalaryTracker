@@ -19,6 +19,15 @@
         android:label="fragment_statics"
         tools:layout="@layout/fragment_statics" >
 
+        <action
+            android:id="@+id/action_staticsFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/action_staticsFragment_to_daysFragment"
+            app:destination="@id/daysFragment" />
+        <action
+            android:id="@+id/action_staticsFragment_to_mostPurchasedFragment"
+            app:destination="@id/mostPurchasedFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -58,5 +67,20 @@
             android:name="invoice"
             app:argType="com.example.domain.entitys.Invoice" />
     </activity>
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.example.msareefapp.Ui.Fragments.Categories.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories" />
+    <fragment
+        android:id="@+id/daysFragment"
+        android:name="com.example.msareefapp.Ui.Fragments.DaysFragment.DaysFragment"
+        android:label="fragment_days"
+        tools:layout="@layout/fragment_days" />
+    <fragment
+        android:id="@+id/mostPurchasedFragment"
+        android:name="com.example.msareefapp.Ui.Fragments.MostPuschased.MostPurchasedFragment"
+        android:label="fragment_most_purchased"
+        tools:layout="@layout/fragment_most_purchased" />
 
 </navigation>

@@ -47,7 +47,10 @@ android {
 }
 
 dependencies {
-    implementation ("com.github.zerobranch:SwipeLayout:1.3.1")
+    //barChat - philJay
+    implementation (libs.mpandroidchart)
+
+    implementation (libs.swipelayout)
     //viewModel&LiveData
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)

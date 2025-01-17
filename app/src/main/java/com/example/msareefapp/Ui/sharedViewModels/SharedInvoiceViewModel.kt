@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.domain.entitys.Invoice
 import com.example.domain.useCases.InvoicesUseCases.GetAllInvoicesUseCase
 import com.example.domain.useCases.InvoicesUseCases.InsertInvoicesUseCase
+import com.example.domain.useCases.InvoicesUseCases.InsertPurchasedItemUseCase
 import com.example.domain.useCases.InvoicesUseCases.UpdateInvoiceUseCase
 import com.example.domain.useCases.categoriesUseCase.GetCategoriesUseCase
 import com.example.msareefapp.Bases.BaseValidation.FieldsValidation
@@ -24,7 +25,8 @@ class SharedInvoiceViewModel @Inject constructor(
     private val insertInvoicesUseCase: InsertInvoicesUseCase,
     private val getAllInvoicesUseCase: GetAllInvoicesUseCase,
     private val updateInvoiceUseCase: UpdateInvoiceUseCase,
-    private  val getCategoriesUseCase: GetCategoriesUseCase
+    private  val getCategoriesUseCase: GetCategoriesUseCase,
+    private val insertPurchasedItemUseCase: InsertPurchasedItemUseCase
 ) :BaseViewModel() {
     private  var _invoiceTypeLiveData = MutableLiveData<List<String?>?>()
     val invoiceTypeLiveData : LiveData<List<String?>?> get() = _invoiceTypeLiveData
@@ -46,6 +48,7 @@ class SharedInvoiceViewModel @Inject constructor(
     private fun insertInvoice(invoice : Invoice, categoryName:String){
         viewModelScope.launch {
             insertInvoicesUseCase.invoke(invoice,categoryName)
+            insertPurchasedItemUseCase.invoke(invoice.purchasedItems)
         }
     }
 

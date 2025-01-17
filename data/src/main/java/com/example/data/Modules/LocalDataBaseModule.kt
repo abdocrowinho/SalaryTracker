@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.example.data.Constants
 import com.example.data.dataSources.localDataBase.Dao.CategoryDao
 import com.example.data.dataSources.localDataBase.Dao.InvoiceDao
+import com.example.data.dataSources.localDataBase.Dao.PurchasedDao
 import com.example.data.dataSources.localDataBase.Dao.UserDao
 import com.example.data.dataSources.localDataBase.LocalDataBase
 import dagger.Module
@@ -41,6 +42,10 @@ class LocalDataBaseModule {
     @Provides
     fun provideCategoryDao(localDataBase: LocalDataBase):CategoryDao{
         return localDataBase.categoryDao()
+    }
+    @Singleton
+    @Provides fun providesPurchasedDao(localDataBase: LocalDataBase):PurchasedDao{
+        return localDataBase.purchasedDao()
     }
 
 }

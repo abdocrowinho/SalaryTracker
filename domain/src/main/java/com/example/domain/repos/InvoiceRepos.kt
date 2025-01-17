@@ -1,5 +1,6 @@
 package com.example.domain.repos
 
+import com.example.domain.entitys.DaySpending
 import com.example.domain.entitys.Invoice
 import kotlinx.coroutines.flow.Flow
 
@@ -13,4 +14,5 @@ fun getInvoicesByCategoryId(categoryId:String): Flow<List<Invoice>>
     suspend fun updateInvoice(invoice: Invoice)
 
     suspend fun deleteInvoice(invoice: Invoice)
+    fun getSpendingByDay():Flow<List<DaySpending?>?>
 }

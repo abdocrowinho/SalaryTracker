@@ -6,7 +6,9 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.example.data.Constants
+import com.example.data.dataSources.localDataBase.Entity.DaySpendingEntity
 import com.example.data.dataSources.localDataBase.Entity.InvoiceEntity
+import com.example.data.dataSources.localDataBase.Entity.MostPurchasedEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -26,5 +28,11 @@ fun getInvoiceByCategory(categoryId : String):Flow<List<InvoiceEntity>>
 
     @Delete
     suspend fun deleteInvoice(invoice: InvoiceEntity)
+
+@Query("SELECT time, COALESCE(SUM(amount), 0) AS totalSpent " +
+        "FROM invoice " +
+        "GROUP BY time")
+    fun getSpendingByDay():Flow<List<DaySpendingEntity?>?>
+
 
 }

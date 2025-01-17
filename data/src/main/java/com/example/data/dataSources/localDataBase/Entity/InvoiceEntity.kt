@@ -22,9 +22,9 @@ import com.example.data.dataSources.localDataBase.typeConverters.PurchasesTypeCo
 data class InvoiceEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 1,
-    val purchasedItems: List<PurchasedItem?>? = ArrayList<PurchasedItem>(),
+    val purchasedItems: List<PurchasedItemEntity?>? = ArrayList<PurchasedItemEntity>(),
     val dateTime: String? = null,
-    val time: String? = null,
+    val time: Int? = null,
     val categoryId: Long ?= null,
     val amount: Double? = 0.0,
 )
