@@ -1,13 +1,9 @@
-package com.example.msareefapp.Ui.Fragments.Statics
+package com.example.msareefapp.Ui.Fragments.Categories
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isGone
-import androidx.core.view.isVisible
-import androidx.transition.Visibility
 import com.example.domain.entitys.CategoryStats
-import com.example.domain.entitys.Invoice
 import com.example.msareefapp.Bases.BaseAdapter
 import com.example.msareefapp.databinding.CategoriesStaticsBinding
 
@@ -27,7 +23,7 @@ override fun getViewHolder(binding: CategoriesStaticsBinding): BaseViewHolder<Ca
 
 
     private class ItemViewHolder(val binding: CategoriesStaticsBinding
-    ,val listener:OnItemClick?
+    ,val listener: OnItemClick?
     ) : BaseViewHolder<CategoryStats,CategoriesStaticsBinding>(binding){
 
     override fun bind(item: CategoryStats) {

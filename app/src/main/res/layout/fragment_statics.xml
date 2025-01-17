@@ -222,14 +222,28 @@
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Categories_Rv"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/main_appBar"
+        app:tabMode="fixed"
+
+        app:tabGravity="fill">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:id="@+id/FragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:paddingBottom="?actionBarSize"
+        app:layout_constraintTop_toBottomOf="@id/tabs_layout"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_appBar"
-        tools:listitem="@layout/categories_statics" />
+        />
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

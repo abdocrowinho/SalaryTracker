@@ -1,7 +1,6 @@
 package com.example.data.dataSources.localDataBase.typeConverters
 
 import androidx.room.TypeConverter
-import com.example.data.dataSources.localDataBase.Entity.PurchasedItem
 import com.example.data.dataSources.localDataBase.Entity.UserEntity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
